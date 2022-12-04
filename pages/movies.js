@@ -14,7 +14,7 @@ export async function getServerSideProps() {
             .toArray();
 
         return {
-            props: { movies: JSON.parse(JSON.stringify(movies)) },
+            props: { fallback: false, movies: JSON.parse(JSON.stringify(movies)) },
         };
     } catch (e) {
         console.error(e);

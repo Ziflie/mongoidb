@@ -14,15 +14,13 @@ export async function getStaticProps() {
             .toArray();
 
         return {
-            props: { movies: JSON.parse(JSON.stringify(movies)) },
+            props: { fallback: false, movies: JSON.parse(JSON.stringify(movies)) },
         };
     } catch (e) {
         console.error(e);
     }
 }
         
-
-
 
 export default function Top({ movies }) {
   return (
